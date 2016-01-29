@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\TipoMedioComunicacion;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\View;
 
 class TipoMedioComunicacionController extends Controller
 {
@@ -16,7 +18,8 @@ class TipoMedioComunicacionController extends Controller
      */
     public function index()
     {
-        //
+        $tipoMedioComunicaciones = TipoMedioComunicacion::all();
+        return view('tipo_medio_comunicaciones.index', compact('tipoMedioComunicaciones'));
     }
 
     /**
